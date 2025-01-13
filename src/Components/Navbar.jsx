@@ -7,15 +7,12 @@ const Navbar = () => {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-100 text-blue-700 shadow-lg sticky top-0 z-50 w-full">
+    <nav className="bg-white text-blue-700  sticky top-0 z-50 w-full">
       <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20 w-full">
           {/* Left Section: Logo and Brand Name */}
           <div className="flex items-center space-x-4 mr-auto">
-            <img src="src/assets/img/logo.png" alt="Logo" className="h-12 ml-0" />
-            <h1 className="text-2xl font-serif font-bold hover:text-blue-500 transition duration-300">
-              Shivsys
-            </h1>
+            <img src="src/assets/img/ShivsysLogo.png" alt="Logo" className="h-12 ml-0 max-w-full" />
           </div>
 
           {/* Center Section: Navigation Links */}
@@ -114,11 +111,11 @@ const Navbar = () => {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden w-full px-6 py-4 space-y-4 bg-blue-100 shadow-md">
+        <div className="md:hidden w-full px-6 py-4 space-y-4 bg-white shadow-md">
           <a href="/" className="block text-lg font-semibold hover:text-blue-500">
             Home
           </a>
-          <a href="/AboutUs" className="block text-lg font-semibold hover:text-blue-500">
+          <a href="/AboutPage" className="block text-lg font-semibold hover:text-blue-500">
             About
           </a>
           <a href="/ServicePage" className="block text-lg font-semibold hover:text-blue-500">
@@ -127,47 +124,9 @@ const Navbar = () => {
           <a href="/CareerPage" className="block text-lg font-semibold hover:text-blue-500">
             Careers
           </a>
-          <button
-            onClick={() => setIsCommunityDropdownOpen((prev) => !prev)}
-            className="block text-lg font-semibold hover:text-blue-500 focus:outline-none"
-          >
-            Community +
-          </button>
-          {isCommunityDropdownOpen && (
-            <div className="pl-4 space-y-2">
-              <a href="/TeamPage" className="block text-sm font-semibold hover:text-blue-500">
-                Our Team
-              </a>
-            </div>
-          )}
-          <button
-            onClick={() => setIsServicesDropdownOpen((prev) => !prev)}
-            className="block text-lg font-semibold hover:text-blue-500 focus:outline-none"
-          >
-            Services+
-          </button>
-          {isServicesDropdownOpen && (
-            <div className="pl-4 space-y-2">
-              <a href="/Mobile_App_DevelopmentPage" className="block text-sm font-semibold hover:text-blue-500">
-                Mobile App Development
-              </a>
-              <a href="/Software_Testing_ServicePage" className="block text-sm font-semibold hover:text-blue-500">
-                Software Testing
-              </a>
-              <a href="/Development_ServicePage" className="block text-sm font-semibold hover:text-blue-500">
-                Development Services
-              </a>
-              <a href="/EduTech_Page" className="block text-sm font-semibold hover:text-blue-500">
-                Edu Tech
-              </a>
-              <a href="/AI&Data_AnalyticsPage" className="block text-sm font-semibold hover:text-blue-500">
-                AI & Data Analytics
-              </a>
-              <a href="/Web_Design_DevelopmentPage" className="block text-sm font-semibold hover:text-blue-500">
-                Web Design & Development
-              </a>
-            </div>
-          )}
+          <a href="/TeamPage" className="block text-lg font-semibold hover:text-blue-500">
+            Team
+          </a>
           <a href="/ContactPage" className="block text-lg font-semibold hover:text-blue-500">
             Contact
           </a>
@@ -183,7 +142,7 @@ const Navbar = () => {
       {/* WhatsApp Icon */}
       <div className="fixed bottom-24 right-10 z-10 text-right">
         <a href="https://wa.me/12672183807" target="_blank" rel="noopener noreferrer">
-          <img src="src/assets/img/img4.gif" alt="WhatsApp" className="w-24 h-24" />
+          <img src="src/assets/img/img4.gif" alt="WhatsApp" className="w-16 h-16 md:w-24 md:h-24 max-w-full" />
         </a>
       </div>
     </nav>

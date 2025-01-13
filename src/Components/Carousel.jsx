@@ -6,26 +6,31 @@ const ShivsysCarousel = () => {
       title: "Innovation",
       description: "We thrive on creating cutting-edge solutions tailored for your needs.",
       icon: "💡",
+      backgroundImage: "/src/assets/img/Innovation.png",
     },
     {
       title: "Reliability",
       description: "Delivering consistent and dependable results every time.",
       icon: "✅",
+      backgroundImage: "/src/assets/img/reliabilty.png",
     },
     {
       title: "Customer Focus",
       description: "Your success is our priority, and we ensure satisfaction at every step.",
       icon: "🤝",
+      backgroundImage: "/src/assets/img/CustomerFocus.jpg",
     },
     {
       title: "Excellence",
       description: "Striving for perfection in everything we do.",
       icon: "🏆",
+      backgroundImage: "/src/assets/img/Excellent.png",
     },
     {
       title: "Sustainability",
       description: "Committed to environmentally conscious and sustainable solutions.",
       icon: "🌱",
+      backgroundImage: "/src/assets/img/sustainability.avif",
     },
   ];
 
@@ -40,11 +45,11 @@ const ShivsysCarousel = () => {
   }, [qualities.length]);
 
   return (
-    <div className="w-full bg-gradient-to-r from-pink-50 via-blue-200 to-pink-50 py-12 mt-16 mb-16">
-      <h2 className="text-3xl font-bold text-center mb-8 text-blue-900 drop-shadow-lg">
+    <div className="w-full bg-white py-8 mt-12 mb-12 px-4 sm:px-8 md:px-16">
+      <h2 className="text-2xl font-bold text-center mb-6 text-blue-900 drop-shadow-lg">
         Why Choose Shivsys?
       </h2>
-      <div className="relative w-full max-w-screen-xl mx-auto overflow-hidden rounded-lg shadow-lg bg-white">
+      <div className="relative w-full max-w-screen-md mx-auto overflow-hidden rounded-lg shadow-lg bg-white">
         {/* Carousel Track */}
         <div
           className="flex transition-transform duration-700 ease-in-out"
@@ -55,23 +60,43 @@ const ShivsysCarousel = () => {
           {qualities.map((quality, index) => (
             <div
               key={index}
-              className="w-full flex-shrink-0 flex flex-col items-center text-center p-8"
+              className="w-full flex-shrink-0 flex flex-col items-center text-center p-4 relative"
+              style={{
+                minHeight: "250px", // Keep card height consistent
+              }}
             >
-              <div className="text-6xl mb-4">{quality.icon}</div>
-              <h3 className="text-2xl font-bold text-blue-800 mb-4">
-                {quality.title}
-              </h3>
-              <p className="text-blue-950">{quality.description}</p>
+              {/* Blurred Background */}
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url(${quality.backgroundImage})`,
+                  filter: "blur(1px)", // Adjust blur effect
+                  opacity: 0.5, // Adjust opacity for background dimming
+                }}
+              ></div>
+
+              {/* Card Content */}
+              <div className="relative z-10">
+                <div className="bg-transparent rounded-full p-3 mb-3 text-4xl ">
+                  {quality.icon}
+                </div>
+                <h3 className="text-xl font-bold text-blue-800 mb-2 drop-shadow-md bg-transparent p-2 rounded-md">
+                  {quality.title}
+                </h3>
+                <p className="text-blue-800 text-sm drop-shadow-sm bg-transparent p-2 rounded-md">
+                  {quality.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
         {/* Dots Indicator */}
-        <div className="flex justify-center mt-6 space-x-2">
+        <div className="flex justify-center mt-4 space-x-2">
           {qualities.map((_, index) => (
             <div
               key={index}
-              className={`w-3 h-3 rounded-full ${
-                currentIndex === index ? "bg-blue-200" : "bg-gray-100"
+              className={`w-2 h-2 rounded-full ${
+                currentIndex === index ? "bg-blue-400" : "bg-gray-300"
               }`}
             ></div>
           ))}

@@ -1,86 +1,116 @@
-import React from "react";
+import React from 'react';
 
-// Import images from your local directories
-import facebookIcon from "/src/assets/img/facebook.png"; // adjust the path as needed
-import twitterIcon from "/src/assets/img/twitter.png"; // adjust the path as needed
-import linkedinIcon from "/src/assets/img/linkedin.png"; // adjust the path as needed
-import defaultMemberImage from "/src/assets/img/defaultmember.jpeg"; // adjust the path as needed
-
-const TeamMembers = () => {
-  const teamMembers = [
-    { name: "Sam", role: "Developer", image: defaultMemberImage },
-    { name: "John", role: "Designer", image: defaultMemberImage },
-    { name: "Jane", role: "Manager", image: defaultMemberImage },
-    { name: "Alice", role: "Tester", image: defaultMemberImage },
-  ];
-
-  // Social Media Image URLs (local files)
-  const socialIcons = {
-    facebook: facebookIcon,
-    twitter: twitterIcon,
-    linkedin: linkedinIcon,
-  };
-
+const TeamSection = () => {
   return (
-    <section className="container mx-auto my-20">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className="our-team bg-white p-4 rounded-lg text-center border border-[#0712a8ea] shadow-md hover:shadow-lg transition-all group"
-          >
-            <div className="pic p-4 mb-6 rounded-full transition-all group-hover:bg-[#0712a8ea]">
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-auto rounded-full transition-all group-hover:scale-110 group-hover:opacity-90"
-              />
+    <section className="section-team py-20">
+      <div className="container mx-auto px-6">
+        {/* Start Header Section */}
+        <div className="row justify-center text-center mb-12">
+          <div className="col-md-8 col-lg-6">
+            <div className="header-section">
+              <h3 className="small-title mb-6 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-700">Our Experts</h3>
+              <h2 className="title text-5xl text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-700 font-bold">Let's meet with Our Team</h2>
             </div>
-            <h3 className="title text-[#0712a8ea] text-xl font-semibold">{member.name}</h3>
-            <span className="post text-[#0712a8ea] text-md mb-4">{member.role}</span>
-            <ul className="social flex justify-center space-x-3">
-              <li>
-                <a
-                  href="#"
-                  className="hover:bg-[#0712a8ea] hover:text-white transition-all"
-                >
-                  <img
-                    src={socialIcons.facebook}
-                    alt="Facebook"
-                    className="w-6 h-6"
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:bg-[#60c5a8] hover:text-white transition-all"
-                >
-                  <img
-                    src={socialIcons.twitter}
-                    alt="Twitter"
-                    className="w-6 h-6"
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:bg-[#60c5a8] hover:text-white transition-all"
-                >
-                  <img
-                    src={socialIcons.linkedin}
-                    alt="LinkedIn"
-                    className="w-6 h-6"
-                  />
-                </a>
-              </li>
-            </ul>
           </div>
-        ))}
+        </div>
+        {/* / End Header Section */}
+        <div className="row grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Start Single Person */}
+          <div className="single-person bg-[#f6f9ff] p-8 rounded-lg hover:bg-gradient-to-r hover:from-[#016cec] hover:to-[#00b5f7]">
+            <div className="person-image relative mb-12 rounded-full border-4 border-transparent transition-all duration-300 hover:p-3 hover:border-white">
+              <img className="w-full rounded-full" src="https://i.ibb.co/G2CBWvb/person1.jpg" alt="Vivek Gupta" />
+              <span className="icon absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 inline-block w-16 h-16 text-center bg-gradient-to-r from-[#016cec] to-[#00b5f7] text-white rounded-full text-2xl">
+                <i className="fab fa-html5"></i>
+              </span>
+            </div>
+            <div className="person-info text-center">
+              <h3 className="full-name text-2xl font-bold mb-2">Vivek Gupta</h3>
+              <span className="speciality text-sm text-blue-600 uppercase">CEO & Founder</span>
+            </div>
+          </div>
+          {/* / End Single Person */}
+
+          {/* Start Single Person */}
+          <div className="single-person bg-[#f6f9ff] p-8 rounded-lg hover:bg-gradient-to-r hover:from-[#016cec] hover:to-[#00b5f7]">
+            <div className="person-image relative mb-12 rounded-full border-4 border-transparent transition-all duration-300 hover:p-3 hover:border-white">
+              <img className="w-full rounded-full" src="https://i.ibb.co/nbpNr4r/person2.jpg" alt="Vivek Tiwari" />
+              <span className="icon absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 inline-block w-16 h-16 text-center bg-gradient-to-r from-[#016cec] to-[#00b5f7] text-white rounded-full text-2xl">
+                <i className="fab fa-wordpress-simple"></i>
+              </span>
+            </div>
+            <div className="person-info text-center">
+              <h3 className="full-name text-2xl font-bold mb-2">Vivek Tiwari</h3>
+              <span className="speciality text-sm text-blue-600 uppercase">Digital Marketer & Software Development</span>
+            </div>
+          </div>
+          {/* / End Single Person */}
+
+          {/* Start Single Person */}
+          <div className="single-person bg-[#f6f9ff] p-8 rounded-lg hover:bg-gradient-to-r hover:from-[#016cec] hover:to-[#00b5f7]">
+            <div className="person-image relative mb-12 rounded-full border-4 border-transparent transition-all duration-300 hover:p-3 hover:border-white">
+              <img className="w-full rounded-full" src="https://i.ibb.co/25zdRMr/person3.jpg" alt="Akash Singh" />
+              <span className="icon absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 inline-block w-16 h-16 text-center bg-gradient-to-r from-[#016cec] to-[#00b5f7] text-white rounded-full text-2xl">
+                <i className="fab fa-angular"></i>
+              </span>
+            </div>
+            <div className="person-info text-center">
+              <h3 className="full-name text-2xl font-bold mb-2">Akash Singh</h3>
+              <span className="speciality text-sm text-blue-600 uppercase">Tech Lead</span>
+            </div>
+          </div>
+          {/* / End Single Person */}
+
+          {/* Start Single Person */}
+          <div className="single-person bg-[#f6f9ff] p-8 rounded-lg hover:bg-gradient-to-r hover:from-[#016cec] hover:to-[#00b5f7]">
+            <div className="person-image relative mb-12 rounded-full border-4 border-transparent transition-all duration-300 hover:p-3 hover:border-white">
+              <img className="w-full rounded-full" src="https://i.ibb.co/w0ynr2Q/person4.jpg" alt="Sundarm Mishra" />
+              <span className="icon absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 inline-block w-16 h-16 text-center bg-gradient-to-r from-[#016cec] to-[#00b5f7] text-white rounded-full text-2xl">
+                <i className="fab fa-js"></i>
+              </span>
+            </div>
+            <div className="person-info text-center">
+              <h3 className="full-name text-2xl font-bold mb-2">Sundarm Mishra </h3>
+              <span className="speciality text-sm text-blue-600 uppercase">Software Engineer</span>
+            </div>
+          </div>
+          {/* / End Single Person */}
+
+          
+          {/* Start Single Person */}
+          <div className="single-person bg-[#f6f9ff] p-8 rounded-lg hover:bg-gradient-to-r hover:from-[#016cec] hover:to-[#00b5f7]">
+            <div className="person-image relative mb-12 rounded-full border-4 border-transparent transition-all duration-300 hover:p-3 hover:border-white">
+              <img className="w-full rounded-full" src="https://i.ibb.co/w0ynr2Q/person4.jpg" alt="Pankaj Rana" />
+              <span className="icon absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 inline-block w-16 h-16 text-center bg-gradient-to-r from-[#016cec] to-[#00b5f7] text-white rounded-full text-2xl">
+                <i className="fab fa-js"></i>
+              </span>
+            </div>
+            <div className="person-info text-center">
+              <h3 className="full-name text-2xl font-bold mb-2">Pankaj Rana</h3>
+              <span className="speciality text-sm text-blue-600 uppercase">Senior Technical Architect</span>
+            </div>
+          </div>
+          {/* / End Single Person */}
+
+          
+          {/* Start Single Person */}
+          <div className="single-person bg-[#f6f9ff] p-8 rounded-lg hover:bg-gradient-to-r hover:from-[#016cec] hover:to-[#00b5f7]">
+            <div className="person-image relative mb-12 rounded-full border-4 border-transparent transition-all duration-300 hover:p-3 hover:border-white">
+              <img className="w-full rounded-full" src="https://i.ibb.co/w0ynr2Q/person4.jpg" alt="Vikash" />
+              <span className="icon absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 inline-block w-16 h-16 text-center bg-gradient-to-r from-[#016cec] to-[#00b5f7] text-white rounded-full text-2xl">
+                <i className="fab fa-js"></i>
+              </span>
+            </div>
+            <div className="person-info text-center">
+              <h3 className="full-name text-2xl font-bold mb-2">Vikash</h3>
+              <span className="speciality text-sm text-blue-600 uppercase">Software Engineer</span>
+            </div>
+          </div>
+          {/* / End Single Person */}
+
+        </div>
       </div>
     </section>
   );
 };
 
-export default TeamMembers;
+export default TeamSection;

@@ -1,100 +1,91 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const ShivsysSwiper = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null); // State to track hovered logo
+
   const settings = {
-    dots: false, // No navigation dots
-    infinite: true, // Enable infinite scrolling
-    speed: 10000, // Control overall scrolling speed (lower is faster)
-    slidesToShow: 5, // Show three companies at a time
-    slidesToScroll: 2, // Scroll two slides at a time
-    autoplay: true, // Automatically play the swiper
-    autoplaySpeed: 0, // Continuous autoplay without pause
+    dots: false,
+    infinite: true, // Infinite loop for continuous scrolling
+    speed: 3000, // Speed of the swipe (this is how fast the logo moves)
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 0, // Set it to 0 for continuous motion
     cssEase: "linear", // Smooth continuous transition
-    centerMode: false, // Disable centering the active slide (to reduce gaps)
+    centerMode: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1008,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const companies = [
-    {
-      name: "MagicBricks",
-      logo: "src/assets/img/mb.png",
-    },
-    {
-      name: "StrategicERP",
-      logo: "src/assets/img/StrategicERP.png",
-    },
-    {
-      name: "NSE",
-      logo: "src/assets/img/NSE.png",
-    },
-    {
-      name: "NTT Data",
-      logo: "src/assets/img/NTT.png",
-    },
-    {
-      name: "Witqualis",
-      logo: "src/assets/img/Witqualis.png",
-    },
-    {
-      name: "Rivian",
-      logo: "src/assets/img/Rivan.png",
-    },
-    {
-      name: "CarsDekho",
-      logo: "src/assets/img/CarDekho.png",
-    },
-    {
-      name: "Yokogawa",
-      logo: "src/assets/img/Yokogawa.png"
-    },
-    {
-      name: "QSpear",
-      logo: "src/assets/img/Qspear.png"
-    },
-    {
-      name: "W3r",
-      logo: "src/assets/img/w3r.png"
-    },
-    {
-      name: "Systegration",
-      logo: "src/assets/img/Systegration.png"
-    },
-    {
-      name: "TechMe",
-      logo: "src/assets/img/Techme.png"
-    },    {
-      name: "Sample Junction",
-      logo: "src/assets/img/Samplejunction.png"
-    },
-
-
+    { name: "Magic Bricks", logo: "src/assets/img/mb.png", link: "https://www.magicbricks.com/" },
+    { name: "Strategic ERP", logo: "src/assets/img/StrategicERP.png", link: "https://strategicerp.com/" },
+    { name: "NSE", logo: "src/assets/img/NSE.png", link: "https://www.nseindia.com/" },
+    { name: "NTT Data", logo: "src/assets/img/NTT.png", link: "https://www.nttdata.com/global/en/" },
+    { name: "Witqualis", logo: "src/assets/img/Witqualis.png", link: "https://witqualis.com/" },
+    { name: "Rivian", logo: "src/assets/img/Rivan.png", link: "https://rivian.com/" },
+    { name: "CarDekho", logo: "src/assets/img/CarDekho.png", link: "https://www.cardekho.com/" },
+    { name: "Yokogawa", logo: "src/assets/img/Yokogawa.png", link: "https://www.yokogawa.com/in/" },
+    { name: "Qspear", logo: "src/assets/img/Qspear.png", link: "" },
+    { name: "W3R", logo: "src/assets/img/w3r.png", link: "https://w3r.com/" },
+    { name: "Systegration", logo: "src/assets/img/Systegration.png", link: "https://systegration.com/" },
+    { name: "Techme", logo: "src/assets/img/Techme.png", link: "" },
+    { name: "Sample Junction", logo: "src/assets/img/Samplejunction.png", link: "https://www.samplejunction.com/" },
   ];
 
-  // Duplicate slides for seamless looping
-  const extendedCompanies = [...companies, ...companies];
-
   return (
-    <div className="w-full bg-white py-8">
-      <h2 className="text-3xl font-extrabold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-900 to-sky-500">
+    <div className="w-full max-w-full mx-auto bg-white py-8 rounded-lg shadow-gray-700 border-2 border-gray-200 overflow-x-hidden">
+      <h1 className="text-3xl font-extrabold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-900 to-sky-500">
         Global Companies Trust Us
-      </h2>
+      </h1>
       <div className="w-full mx-auto">
         <Slider {...settings}>
-          {extendedCompanies.map((company, index) => (
+          {companies.map((company, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center"
+              className="flex flex-col items-center text-center group"
+              onMouseEnter={() => setHoveredIndex(index)} // Set hovered logo on hover
+              onMouseLeave={() => setHoveredIndex(null)} // Reset on mouse leave
             >
-              <img
-                src={company.logo}
-                alt={`${company.name} Logo`}
-                className="w-32 h-32 mx-auto transform transition-transform duration-300 hover:scale-125 group-hover:shadow-xl"
-              />
-              <h3 className="text-xl font-semibold mt-4 text-blue-900">
-                {company.name}
-              </h3>
+              {/* Wrapping the logo in a clickable <a> tag */}
+              <a href={company.link} target="_blank" rel="noopener noreferrer" className="block">
+                <img
+                  src={company.logo}
+                  alt={`${company.name} Logo`}
+                  className="w-28 h-28 mx-auto transform transition-transform duration-300 hover:scale-110 group-hover:shadow-xl" // Adjusted the width and height, and hover scale to 110%
+                />
+              </a>
+              
+              {/* Show company name only when hovered */}
+              {hoveredIndex === index && (
+                <>
+                  <h3 className="text-xl font-semibold mt-4 text-blue-900">{company.name}</h3>
+                </>
+              )}
             </div>
           ))}
         </Slider>
