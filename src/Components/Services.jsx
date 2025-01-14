@@ -27,9 +27,9 @@ const ServicesPage = () => {
       clipPath: 'circle(calc(6.25rem + 7.5vw) at 100% 0%)',
     },
     {
-      title: 'Cybersecurity',
+      title: 'Consulting',
       description:
-        'Comprehensive security strategies to safeguard your business from evolving cyber threats.',
+        'Comprehensive Consulting strategies to expand your business from evolving Skills.',
       backgroundImage:
         'url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
       clipPath: 'circle(calc(6.25rem + 7.5vw) at 0% 0%)',

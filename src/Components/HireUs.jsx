@@ -42,7 +42,7 @@ function BouncingButton() {
 
       {/* FAQ Section */}
       <section className="w-full bg-white pt-12 pb-12 px-4">
-        <div className="faq w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center space-y-6 md:space-y-0 border-2 border-blue-200 rounded-lg shadow-xl p-6 hover:bg-white transition-all duration-300 hover:scale-105 transform">
+        <div className="faq w-full max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center space-y-6 md:space-y-0 border-2 border-blue-200 rounded-lg shadow-xl p-6 hover:bg-white transition-all duration-300 hover:scale-105 transform">
           {/* Left Section with Images */}
           <div className="w-full md:w-1/2 relative">
             {/* Desktop Image */}
@@ -60,9 +60,9 @@ function BouncingButton() {
             </div>
 
             {/* Mobile Image */}
-            <div className="md:hidden relative w-full h-[140px]">
+            <div className="md:hidden relative w-[70%] mx-auto">
               <img
-                className="absolute top-[-6%] left-[44%] w-full transform -translate-x-1/2"
+                className=" w-full transform -translate-x-1/2"
                 src="https://rvs-faq-accordion-card.netlify.app/images/illustration-woman-online-mobile.svg"
                 alt="illustration-woman-online-mobile"
               />
