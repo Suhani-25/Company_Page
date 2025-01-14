@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Herosection from "./Components/Herosection";
 import AboutPage from "./Pages/AboutPage";
@@ -33,14 +34,14 @@ const App = () => {
    
     <Router basename="/Company_Page">
     <Navbar />
-        <Routes>
+        <Switch>
           <Route path="/" element={<Home />} />
           <Route path="/AboutPage" element={<AboutPage />} />
           <Route path="/ServicePage" element={<ServicePage />} />
           <Route path="/TeamPage" element={<TeamPage />} />
           <Route path="/CareerPage" element={<CareerPage />} />
           <Route path="/ContactPage" element={<ContactPage />} />
-        </Routes>
+        </Switch>
        <Footer/>
     </Router>
     </>
