@@ -30,9 +30,9 @@ const Home = () => {
 
 const App = () => {
   return (<>
-    <Navbar />
+   
     <Router basename="/Company_Page">
-     
+    <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/AboutPage" element={<AboutPage />} />
