@@ -19,7 +19,7 @@ const ServicesPage = () => {
       clipPath: 'circle(calc(6.25rem + 7.5vw) at 0% 100%)',
     },
     {
-      title: 'Cloud Solutions and Services',
+      title: 'Cloud Solutions',
       description:
         'Innovative cloud-based services to optimize your digital transformation journey and ensure seamless scalability.',
       backgroundImage:
