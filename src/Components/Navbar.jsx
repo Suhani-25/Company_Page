@@ -116,7 +116,7 @@ const Navbar = () => {
           <a href="/" className="block text-lg font-semibold hover:text-blue-500">
             Home
           </a>
-          <a href="/AboutPage.jsx" className="block text-lg font-semibold hover:text-blue-500">
+          <a href="/src/Pages/AboutPage.jsx" className="block text-lg font-semibold hover:text-blue-500">
             About
           </a>
           <a href="/ServicePage" className="block text-lg font-semibold hover:text-blue-500">
