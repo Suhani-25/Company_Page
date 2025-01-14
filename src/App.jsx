@@ -30,7 +30,7 @@ const Home = () => {
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/Company_Page">
      
         <Navbar />
         <Routes>
