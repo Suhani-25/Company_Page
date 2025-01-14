@@ -1,5 +1,5 @@
 import React from "react";
-
+import shivsyshero from "src/assets/img/shivsyshero.png";
 
 const HeroSection = () => {
   return (
@@ -29,7 +29,7 @@ const HeroSection = () => {
           <div className="text-center lg:text-right">
             <img
               className="w-full max-w-md mx-auto lg:max-w-5xl animate-zoomIn delay-200 "
-              src="src/assets/img/shivsyshero.png"
+              src={shivsyshero}
               alt="Hero"
             />
           </div>
