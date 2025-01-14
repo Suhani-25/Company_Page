@@ -1,6 +1,5 @@
 import React from "react";
-//import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Herosection from "./Components/Herosection";
 import AboutPage from "./Pages/AboutPage";
