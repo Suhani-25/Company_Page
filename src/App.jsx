@@ -35,12 +35,12 @@ const App = () => {
     <Router basename="/Company_Page">
     <Navbar />
         <Switch>
-          <Route path="/" element={<Home />} />
-          <Route path="/AboutPage" element={<AboutPage />} />
-          <Route path="/ServicePage" element={<ServicePage />} />
-          <Route path="/TeamPage" element={<TeamPage />} />
-          <Route path="/CareerPage" element={<CareerPage />} />
-          <Route path="/ContactPage" element={<ContactPage />} />
+          <Route path="/" extract Component={<Home />} />
+          <Route path="/AboutPage" extract Component={<AboutPage />} />
+          <Route path="/ServicePage" extract Component={<ServicePage />} />
+          <Route path="/TeamPage" extract Component={<TeamPage />} />
+          <Route path="/CareerPage" extract Component={<CareerPage />} />
+          <Route path="/ContactPage" extract Component={<ContactPage />} />
         </Switch>
        <Footer/>
     </Router>
