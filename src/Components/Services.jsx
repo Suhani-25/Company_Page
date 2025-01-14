@@ -38,7 +38,7 @@ const ServicesPage = () => {
 
   return (
     <section className="min-h-screen bg-white text-center py-20 px-4 sm:px-8 xl:px-0 flex flex-col justify-center">
-      <span className="text-gray-800 text-sm sm:text-lg max-w-lg mx-auto mb-4 capitalize flex items-center justify-center">
+      <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-700 animate-textColorChange font-custom text-center sm:text-lg max-w-lg mx-auto mb-4 capitalize flex items-center justify-center">
         what we're offering
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ const ServicesPage = () => {
           />
         </svg>
       </span>
-      <h1 className="text-gray-800 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-semibold max-w-3xl mx-auto mb-12 leading-snug">
+      <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-700 animate-textColorChange font-custom text-center  sm:text-4xl md:text-5xl xl:text-6xl max-w-3xl mx-auto mb-12 leading-snug">
         Services Built Specifically for your Business
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
