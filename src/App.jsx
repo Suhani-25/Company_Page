@@ -29,10 +29,10 @@ const Home = () => {
 };
 
 const App = () => {
-  return (
+  return (<>
+    <Navbar />
     <Router basename="/Company_Page">
      
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/AboutPage" element={<AboutPage />} />
@@ -44,6 +44,7 @@ const App = () => {
      
        <Footer/>
     </Router>
+    </>
   );
 };
 
