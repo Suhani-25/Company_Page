@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from "react";
+import Innovation from "/public/img/Innovation.png";
+import reliabilty from "/public/img/reliabilty.png";
+import Excellent from "/public/img/Excellent.png";
+import CustomerFocus from "/public/img/CustomerFocus.jpg";
+import sustainability from "/public/img/sustainability.avif";
 
 const ShivsysCarousel = () => {
   const qualities = [
@@ -6,31 +11,31 @@ const ShivsysCarousel = () => {
       title: "Innovation",
       description: "We thrive on creating cutting-edge solutions tailored for your needs.",
       icon: "💡",
-      backgroundImage: "/src/assets/img/Innovation.png",
+      backgroundImage: {Innovation},
     },
     {
       title: "Reliability",
       description: "Delivering consistent and dependable results every time.",
       icon: "✅",
-      backgroundImage: "/src/assets/img/reliabilty.png",
+      backgroundImage: {reliabilty},
     },
     {
       title: "Customer Focus",
       description: "Your success is our priority, and we ensure satisfaction at every step.",
       icon: "🤝",
-      backgroundImage: "/src/assets/img/CustomerFocus.jpg",
+      backgroundImage: {CustomerFocus},
     },
     {
       title: "Excellence",
       description: "Striving for perfection in everything we do.",
       icon: "🏆",
-      backgroundImage: "/src/assets/img/Excellent.png",
+      backgroundImage: {Excellent},
     },
     {
       title: "Sustainability",
       description: "Committed to environmentally conscious and sustainable solutions.",
       icon: "🌱",
-      backgroundImage: "/src/assets/img/sustainability.avif",
+      backgroundImage: {sustainability},
     },
   ];
 

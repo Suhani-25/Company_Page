@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import ShivsysLogo from "/public/img/ShivsysLogo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20 w-full">
           {/* Left Section: Logo and Brand Name */}
           <div className="flex items-center space-x-4 mr-auto">
-            <img src="src/assets/img/ShivsysLogo.png" alt="Logo" className="h-12 ml-0 max-w-full" />
+            <img src={ShivsysLogo} alt="Logo" className="h-12 ml-0 max-w-full" />
           </div>
 
           {/* Center Section: Navigation Links */}
@@ -115,7 +116,7 @@ const Navbar = () => {
           <a href="/" className="block text-lg font-semibold hover:text-blue-500">
             Home
           </a>
-          <a href="/AboutPage" className="block text-lg font-semibold hover:text-blue-500">
+          <a href="/AboutPage.jsx" className="block text-lg font-semibold hover:text-blue-500">
             About
           </a>
           <a href="/ServicePage" className="block text-lg font-semibold hover:text-blue-500">
