@@ -1,5 +1,5 @@
 import React from "react";
-import shivsyshero from "/src/assets/img/shivsyshero.png";
+import shivsyshero from "/public/img/shivsyshero.png";
 
 const HeroSection = () => {
   return (
