@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import axios from 'axios'; // Add this line to import axios
+
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -9,8 +11,17 @@ function ContactPage() {
     phoneNumber: '',
     company: '',
     message: '',
-    selectedFile: null,
   });
+  
+  const [formErrors, setFormErrors] = useState({
+    fullName: '',
+    workEmail: '',
+    phoneNumber: '',
+    company: '',
+    message: '',
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Initialize AOS
   useEffect(() => {
@@ -20,25 +31,141 @@ function ContactPage() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    // Clear error message when user starts typing
+    setFormErrors({ ...formErrors, [name]: '' });
   };
 
   const handleFileChange = (e) => {
     setFormData({ ...formData, selectedFile: e.target.files[0] });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    setFormData({
-      fullName: '',
-      workEmail: '',
-      phoneNumber: '',
-      company: '',
-      message: '',
-      selectedFile: null,
-    });
+  const validate = () => {
+    let errors = {};
+    let formIsValid = true;
+
+    // Full Name validation
+    if (!formData.fullName.trim()) {
+      formIsValid = false;
+      errors.fullName = 'Full Name is required.';
+    }
+
+    // Work Email validation
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!formData.workEmail.trim()) {
+      formIsValid = false;
+      errors.workEmail = 'Work Email is required.';
+    } else if (!emailPattern.test(formData.workEmail)) {
+      formIsValid = false;
+      errors.workEmail = 'Please enter a valid email address.';
+    }
+
+    // Phone Number validation (only numbers)
+    const phonePattern = /^[0-9]*$/;
+    if (formData.phoneNumber && !phonePattern.test(formData.phoneNumber)) {
+      formIsValid = false;
+      errors.phoneNumber = 'Phone number should only contain digits.';
+    }
+
+    // Company validation
+    if (formData.company.trim() && formData.company.length < 3) {
+      formIsValid = false;
+      errors.company = 'Company name should be at least 3 characters long.';
+    }
+
+    // Message validation
+    if (!formData.message.trim()) {
+      formIsValid = false;
+      errors.message = 'Message is required.';
+    }
+
+    setFormErrors(errors);
+    return formIsValid;
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   // Validate the form
+
+  //   if (Object.keys(validationErrors).length === 0) {
+  //     try {
+  //       // Axios POST request to submit the form
+  //       const response = await axios.post('http://localhost:3001/ContactPage', formData);
+        
+  //       // Successful submission
+  //       console.log("Form submitted successfully:", response.data);
+  //       alert("Form submitted successfully!");
+  
+  //       // Clear form fields
+  //       setFormData({
+  //         fullName: '',
+  //         workEmail: '',
+  //         phoneNumber: '',
+  //         company: '',
+  //         message: '',
+  //       });
+  //     } catch (error) {
+  //       // Handle errors
+  //       if (error.response) {
+  //         console.error("Server responded with error:", error.response.data);
+  //       } else if (error.request) {
+  //         console.error("No response received:", error.request);
+  //       } else {
+  //         console.error("Error:", error.message);
+  //       }
+  //       alert("Failed to submit the form. Please try again.");
+  //     }
+  //   }
+
+  //   if (validate()) {
+  //     console.log(formData);
+  //     setFormData({
+  //       fullName: '',
+  //       workEmail: '',
+  //       phoneNumber: '',
+  //       company: '',
+  //       message: '',
+  //     });
+  //   }
+  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    // Validate the form
+    if (validate()) {
+      try {
+        // Axios POST request to submit the form
+        const response = await axios.post('http://localhost:3001/ContactPage', formData);
+        
+        // Successful submission
+        console.log("Form submitted successfully:", response.data);
+        alert("Form submitted successfully!");
+  
+        // Clear form fields
+        setFormData({
+          fullName: '',
+          workEmail: '',
+          phoneNumber: '',
+          company: '',
+          message: '',
+        });
+      } catch (error) {
+        // Handle errors
+        if (error.response) {
+          console.error("Server responded with error:", error.response.data);
+        } else if (error.request) {
+          console.error("No response received:", error.request);
+        } else {
+          console.error("Error:", error.message);
+        }
+        alert("Failed to submit the form. Please try again.");
+      }
+    } else {
+      console.log('Validation failed');
+    }
+  };
+  
   return (
     <div className="container mx-auto px-4">
       {/* Header Section */}
@@ -70,6 +197,7 @@ function ContactPage() {
                 className="bg-gray-100 border-2 border-gray-200 rounded-md p-3 w-full focus:ring-2 focus:ring-teal-500"
                 required
               />
+              {formErrors.fullName && <p className="text-red-500 text-sm">{formErrors.fullName}</p>}
             </div>
             <div>
               <label htmlFor="workEmail" className="text-gray-700">Work Email</label>
@@ -82,6 +210,7 @@ function ContactPage() {
                 className="bg-gray-100 border-2 border-gray-200 rounded-md p-3 w-full focus:ring-2 focus:ring-teal-500"
                 required
               />
+              {formErrors.workEmail && <p className="text-red-500 text-sm">{formErrors.workEmail}</p>}
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -95,6 +224,7 @@ function ContactPage() {
                 onChange={handleChange}
                 className="bg-gray-100 border-2 border-gray-200 rounded-md p-3 w-full focus:ring-2 focus:ring-teal-500"
               />
+              {formErrors.phoneNumber && <p className="text-red-500 text-sm">{formErrors.phoneNumber}</p>}
             </div>
             <div>
               <label htmlFor="company" className="text-gray-700">Company</label>
@@ -106,6 +236,7 @@ function ContactPage() {
                 onChange={handleChange}
                 className="bg-gray-100 border-2 border-gray-200 rounded-md p-3 w-full focus:ring-2 focus:ring-teal-500"
               />
+              {formErrors.company && <p className="text-red-500 text-sm">{formErrors.company}</p>}
             </div>
           </div>
           <div>
@@ -117,6 +248,7 @@ function ContactPage() {
               onChange={handleChange}
               className="bg-gray-100 border-2 border-gray-200 rounded-md p-3 w-full h-32 focus:ring-2 focus:ring-teal-500"
             ></textarea>
+            {formErrors.message && <p className="text-red-500 text-sm">{formErrors.message}</p>}
           </div>
           <button
             type="submit"
@@ -126,8 +258,6 @@ function ContactPage() {
           </button>
         </form>
       </div>
-
-      
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 import CareerSheet from "../Components/CareerSheet"; // Import the CareerSheet component
-import CareerForm from '../Components/CareerForm';
+import CareerForm from "../Components/CareerForm";
 
 const CareerBanner = () => {
   // Initialize AOS when the component mounts
