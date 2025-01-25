@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import axios from "axios"; // Ensure axios is imported
 
-const CareerForm = () => {
+const careerForm = () => {
   const [formData, setFormData] = useState({
-    fullname: '',
-    role: '',
-    email: '',
-    phone: '',
-    resume: null,
+    fullname: "",
+    role: "",
+    email: "",
+    phone: "",
+    resume: "abc",
   });
 
-  const [errors, setErrors] = useState({}); // To store error messages
+  const [errors, setErrors] = useState({});
 
   // Validating the form fields
   const validate = () => {
@@ -17,16 +18,26 @@ const CareerForm = () => {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const phonePattern = /^[0-9]{10}$/; // Example: validates a 10-digit phone number
 
-    if (!formData.fullname) newErrors.fullname = 'Name is required';
-    if (!formData.role) newErrors.role = 'Role is required';
-    if (!formData.email) newErrors.email = 'Email is required';
-    else if (!emailPattern.test(formData.email)) newErrors.email = 'Enter a valid email';
-    if (!formData.phone) newErrors.phone = 'Phone number is required';
-    else if (!phonePattern.test(formData.phone)) newErrors.phone = 'Enter a valid 10-digit phone number';
-    if (!formData.resume) newErrors.resume = 'Resume is required';
-    else if (!['application/pdf', 'text/plain', 'application/msword', 'image/jpeg', 'image/png'].includes(formData.resume.type))
-      newErrors.resume = 'File must be a PDF, DOC, TXT, JPG, or PNG';
-    
+    if (!formData.fullname) newErrors.fullname = "Name is required";
+    if (!formData.role) newErrors.role = "Role is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    else if (!emailPattern.test(formData.email))
+      newErrors.email = "Enter a valid email";
+    if (!formData.phone) newErrors.phone = "Phone number is required";
+    else if (!phonePattern.test(formData.phone))
+      newErrors.phone = "Enter a valid 10-digit phone number";
+    // if (!formData.resume) newErrors.resume = "Resume is required";
+    // else if (
+    //   ![
+    //     "application/pdf",
+    //     "text/plain",
+    //     "application/msword",
+    //     "image/jpeg",
+    //     "image/png",
+    //   ].includes(formData.resume.type)
+    // )
+    //   newErrors.resume = "File must be a PDF, DOC, TXT, JPG, or PNG";
+
     return newErrors;
   };
 
@@ -45,27 +56,122 @@ const CareerForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Validate the form
     const validationErrors = validate();
     setErrors(validationErrors);
 
-    // If no validation errors, proceed with form submission logic
     if (Object.keys(validationErrors).length === 0) {
-      // Form submission logic (e.g., API call)
-      console.log('Form submitted', formData);
-
-      // Clear form fields after submission
-      setFormData({
-        fullname: '',
-        role: '',
-        email: '',
-        phone: '',
-        resume: null,
-      });
+      try {
+        // Axios POST request to submit the form
+        const response = await axios.post('http://localhost:3001/careerForm', formData);
+        
+        // Successful submission
+        console.log("Form submitted successfully:", response.data);
+        alert("Form submitted successfully!");
+  
+        // Clear form fields
+        setFormData({
+          fullname: "",
+          role: "",
+          email: "",
+          phone: "",
+          resume: "abc",
+        });
+      } catch (error) {
+        // Handle errors
+        if (error.response) {
+          console.error("Server responded with error:", error.response.data);
+        } else if (error.request) {
+          console.error("No response received:", error.request);
+        } else {
+          console.error("Error:", error.message);
+        }
+        alert("Failed to submit the form. Please try again.");
+      }
     }
+  
+    // if (Object.keys(validationErrors).length === 0) {
+    //   try {
+    //     // Construct FormData object for file upload
+    // // const data = new FormData();
+    // // data.append("fullname", formData.fullname);
+    // // data.append("role", formData.role);
+    // // data.append("email", formData.email);
+    // // data.append("phone", formData.phone);
+    //     // //data.append("resume", formData.resume); // Append the actual file
+
+    //     // Axios POST request
+    //     // const response = await axios.post(
+    //     //   "http://localhost:3001/CareerForm",
+    //     //   data,
+    //     //   {
+    //     //     headers: {
+    //     //       "Content-Type": "multipart/form-data",
+    //     //     },
+    //     //   }
+    //     // );
+
+    //     // Handle successful response
+        
+    //     // const applicantData = {
+    //     //   phone: "",
+    //     //   email: "",
+    //     //   role: "",
+    //     //   fullname: "",
+    //     //   resume: ""
+    //     // };
+    //     console.log(formData);
+
+    //     if (formData){
+    //       console.log(formData);
+
+    //       axios.post('http://localhost:3001/careerForm', formData)
+    //         .then(response => console.log(response.data))
+    //         .catch(error => {
+    //           if (error.response) {
+    //             // The server responded with a status code outside the 2xx range
+    //             console.error("Server responded with error:", error.response.data);
+    //           } else if (error.request) {
+    //             // No response received from server
+    //             console.error("No response received:", error.request);
+    //           } else {
+    //             // Error in setting up the request
+    //             console.error("Error:", error.message);
+    //           }
+            
+    //         }
+    //           //console.error('Error:', error)
+    //       );
+          
+          
+    //       console.log("Form submitted successfully:", response.data);
+    //       alert("Form submitted successfully!");}
+
+    //     // Clear form fields
+    //     setFormData({
+    //       fullname: "",
+    //       role: "",
+    //       email: "",
+    //       phone: "",
+    //       resume: "abc",
+    //     });
+    //   } 
+    //   catch (error)  {
+    //      if (error.response){
+    //       console.error("Server responded with error:", error.response.data);
+    //      }
+    //      else if (error.request) {
+    //       // No response received from server
+    //       console.error("No response received:", error.request);
+    //     }else{
+    //       console.error("Error:",error.message);
+    //     }
+    //     alert("Failed to submit the form. Please try again.");
+    //   }
+    // }
   };
 
   return (
@@ -76,29 +182,20 @@ const CareerForm = () => {
             Haven't found the perfect role yet?
           </h4>
           <p className="text-lg text-gray-700">
-            Send us your resume, and our dedicated recruitment team will reach out to you soon.
+            Send us your resume, and our dedicated recruitment team will reach
+            out to you soon.
           </p>
         </div>
 
-        <div className="flex justify-center mb-8 lg:hidden">
-          <img
-            src="/src/assets/img/form-graphics.png"
-            alt="form-graphics"
-            className="w-48"
-          />
-        </div>
-
         <div className="flex flex-col lg:flex-row items-center">
-          {/* Image container with equal width */}
           <div className="lg:w-1/2 w-full mb-8 lg:mb-0">
             <img
-              src="/src/assets/img/form-graphics.png"
+              src="/assets/img/CareerHiring.jpeg"
               alt="form-graphics"
-              className="w-full h-full object-cover rounded-lg shadow-lg" // Ensure it covers the space and is equal in size
+              className="w-full h-full object-cover rounded-lg"
             />
           </div>
 
-          {/* Form container with equal width */}
           <div className="lg:w-1/2 w-full h-full border border-gray-300 rounded-lg p-8 shadow-md">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -111,7 +208,9 @@ const CareerForm = () => {
                   placeholder="Name"
                   required
                 />
-                {errors.fullname && <p className="text-red-500 text-sm">{errors.fullname}</p>}
+                {errors.fullname && (
+                  <p className="text-red-500 text-sm">{errors.fullname}</p>
+                )}
               </div>
 
               <div>
@@ -124,7 +223,9 @@ const CareerForm = () => {
                   placeholder="Role"
                   required
                 />
-                {errors.role && <p className="text-red-500 text-sm">{errors.role}</p>}
+                {errors.role && (
+                  <p className="text-red-500 text-sm">{errors.role}</p>
+                )}
               </div>
 
               <div>
@@ -137,7 +238,9 @@ const CareerForm = () => {
                   placeholder="Email"
                   required
                 />
-                {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+                {errors.email && (
+                  <p className="text-red-500 text-sm">{errors.email}</p>
+                )}
               </div>
 
               <div>
@@ -150,10 +253,12 @@ const CareerForm = () => {
                   placeholder="Phone"
                   required
                 />
-                {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+                {errors.phone && (
+                  <p className="text-red-500 text-sm">{errors.phone}</p>
+                )}
               </div>
 
-              <div>
+              {/* <div>
                 <input
                   type="file"
                   name="resume"
@@ -162,8 +267,10 @@ const CareerForm = () => {
                   accept=".pdf,.txt,.doc,.jpg,.jpeg,.png"
                   required
                 />
-                {errors.resume && <p className="text-red-500 text-sm">{errors.resume}</p>}
-              </div>
+                {errors.resume && (
+                  <p className="text-red-500 text-sm">{errors.resume}</p>
+                )}
+              </div> */}
 
               <div>
                 <button
@@ -181,4 +288,4 @@ const CareerForm = () => {
   );
 };
 
-export default CareerForm;
+export default careerForm;

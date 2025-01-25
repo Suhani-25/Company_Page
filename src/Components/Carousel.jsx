@@ -1,9 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Innovation from "/public/img/Innovation.png";
-import reliabilty from "/public/img/reliabilty.png";
-import Excellent from "/public/img/Excellent.png";
-import CustomerFocus from "/public/img/CustomerFocus.jpg";
-import sustainability from "/public/img/sustainability.avif";
 
 const ShivsysCarousel = () => {
   const qualities = [
@@ -11,31 +6,31 @@ const ShivsysCarousel = () => {
       title: "Innovation",
       description: "We thrive on creating cutting-edge solutions tailored for your needs.",
       icon: "💡",
-      backgroundImage: {Innovation},
+      backgroundImage: "/assets/img/Innovation.png",
     },
     {
       title: "Reliability",
       description: "Delivering consistent and dependable results every time.",
       icon: "✅",
-      backgroundImage: {reliabilty},
+      backgroundImage: "/assets/img/reliabilty.png",
     },
     {
       title: "Customer Focus",
       description: "Your success is our priority, and we ensure satisfaction at every step.",
       icon: "🤝",
-      backgroundImage: {CustomerFocus},
+      backgroundImage: "/assets/img/CustomerFocus.jpg",
     },
     {
       title: "Excellence",
       description: "Striving for perfection in everything we do.",
       icon: "🏆",
-      backgroundImage: {Excellent},
+      backgroundImage: "/assets/img/Excellent.png",
     },
     {
       title: "Sustainability",
       description: "Committed to environmentally conscious and sustainable solutions.",
       icon: "🌱",
-      backgroundImage: {sustainability},
+      backgroundImage: "/assets/img/sustainability.avif",
     },
   ];
 
@@ -88,7 +83,7 @@ const ShivsysCarousel = () => {
                 <h3 className="text-xl font-bold text-blue-800 mb-2 drop-shadow-md bg-transparent p-2 rounded-md">
                   {quality.title}
                 </h3>
-                <p className="text-blue-800 text-sm drop-shadow-sm bg-transparent p-2 rounded-md">
+                <p className="text-blue-900 font-semibold text-sm drop-shadow-sm bg-transparent p-2 rounded-md">
                   {quality.description}
                 </p>
               </div>

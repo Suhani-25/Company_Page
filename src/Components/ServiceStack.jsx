@@ -20,7 +20,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/Full-Stack.gif" alt="Full-Stack" className="w-12 h-12 mr-4" />
+          <img src="/assets/img/Full-Stack.gif" alt="Full-Stack" className="w-12 h-12 mr-4" />
           <h2 className="text-xl font-semibold">Full Stack</h2>
         </div>
 
@@ -29,7 +29,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/Web.gif" alt="Web" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/Web.gif" alt="Web" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">Web</h2>
         </div>
 
@@ -38,7 +38,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/Cloud.gif" alt="Cloud" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/Cloud.gif" alt="Cloud" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">Cloud</h2>
         </div>
 
@@ -47,7 +47,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/Frontend.gif" alt="Frontend" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/Frontend.gif" alt="Frontend" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">Frontend</h2>
         </div> 
 
@@ -56,7 +56,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/Mobile.gif" alt="Mobile" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/Mobile.gif" alt="Mobile" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">Mobile</h2>
         </div>
 
@@ -65,7 +65,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/ReactJS.gif" alt="ReactJS" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/ReactJS.gif" alt="ReactJS" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">ReactJS</h2>
         </div>
 
@@ -74,7 +74,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/Flutter.png" alt="Flutter" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/Flutter.png" alt="Flutter" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">Flutter</h2>
         </div>
 
@@ -83,7 +83,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/Backend.gif" alt="Backend" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/Backend.gif" alt="Backend" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">Backend</h2>
         </div>
 
@@ -92,7 +92,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/Java.gif" alt="Java" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/Java.gif" alt="Java" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">Java</h2>
         </div>
 
@@ -101,7 +101,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/NET.gif" alt="NET" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/NET.gif" alt="NET" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">.NET</h2>
         </div>
 
@@ -110,7 +110,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/python.png" alt="Python" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/python.png" alt="Python" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">Python</h2>
         </div>
 
@@ -119,7 +119,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/UI_UX.gif" alt="UI/UX" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/UI_UX.gif" alt="UI/UX" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">UI/UX</h2>
         </div>
 
@@ -128,7 +128,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/AI_ML.gif" alt="AI/ML" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/AI_ML.gif" alt="AI/ML" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">AI/ML</h2>
         </div>
 
@@ -137,7 +137,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/AWS.gif" alt="AWS" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/AWS.gif" alt="AWS" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">AWS</h2>
         </div>
 
@@ -146,7 +146,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/PHP.gif" alt="PHP" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/PHP.gif" alt="PHP" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">PHP</h2>
         </div>
 
@@ -155,7 +155,7 @@ function ServiceStack() {
           className="bg-white p-6 shadow-md cursor-pointer rounded-md hover:bg-white border-2 border-blue-300 hover:border-blue-500 flex items-center w-full h-20"
           onClick={() => handleCardClick('/ContactPage')}
         >
-          <img src="src/assets/img/Express.gif" alt="Express" className="w-16 h-12 mr-4" />
+          <img src="/assets/img/Express.gif" alt="Express" className="w-16 h-12 mr-4" />
           <h2 className="text-xl font-semibold">Express</h2>
         </div>
       </div>

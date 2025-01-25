@@ -34,7 +34,7 @@ const ShivsysSwiper = () => {
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -42,23 +42,23 @@ const ShivsysSwiper = () => {
   };
 
   const companies = [
-    { name: "Magic Bricks", logo: "src/assets/img/mb.png", link: "https://www.magicbricks.com/" },
-    { name: "Strategic ERP", logo: "src/assets/img/StrategicERP.png", link: "https://strategicerp.com/" },
-    { name: "NSE", logo: "src/assets/img/NSE.png", link: "https://www.nseindia.com/" },
-    { name: "NTT Data", logo: "src/assets/img/NTT.png", link: "https://www.nttdata.com/global/en/" },
-    { name: "Witqualis", logo: "src/assets/img/Witqualis.png", link: "https://witqualis.com/" },
-    { name: "Rivian", logo: "src/assets/img/Rivan.png", link: "https://rivian.com/" },
-    { name: "CarDekho", logo: "src/assets/img/CarDekho.png", link: "https://www.cardekho.com/" },
-    { name: "Yokogawa", logo: "src/assets/img/Yokogawa.png", link: "https://www.yokogawa.com/in/" },
-    { name: "Qspear", logo: "src/assets/img/Qspear.png", link: "" },
-    { name: "W3R", logo: "src/assets/img/w3r.png", link: "https://w3r.com/" },
-    { name: "Systegration", logo: "src/assets/img/Systegration.png", link: "https://systegration.com/" },
-    { name: "Techme", logo: "src/assets/img/Techme.png", link: "" },
-    { name: "Sample Junction", logo: "src/assets/img/Samplejunction.png", link: "https://www.samplejunction.com/" },
+    { name: "Magic Bricks", logo: "/assets/img/mb.png", link: "https://www.magicbricks.com/" },
+    { name: "Strategic ERP", logo: "/assets/img/StrategicERP.png", link: "https://strategicerp.com/" },
+    { name: "NSE", logo: "/assets/img/NSE.png", link: "https://www.nseindia.com/" },
+    { name: "NTT Data", logo: "/assets/img/NTT.png", link: "https://www.nttdata.com/global/en/" },
+    { name: "Witqualis", logo: "/assets/img/Witqualis.png", link: "https://witqualis.com/" },
+    { name: "Rivian", logo: "/assets/img/Rivan.png", link: "https://rivian.com/" },
+    { name: "CarDekho", logo: "/assets/img/CarDekho.png", link: "https://www.cardekho.com/" },
+    { name: "Yokogawa", logo: "/assets/img/Yokogawa.png", link: "https://www.yokogawa.com/in/" },
+    { name: "Qspear", logo: "/assets/img/Qspear.png", link: "" },
+    { name: "W3R", logo: "/assets/img/w3r.png", link: "https://w3r.com/" },
+    { name: "Systegration", logo: "/assets/img/Systegration.png", link: "https://systegration.com/" },
+    { name: "Techme", logo: "/assets/img/Techme.png", link: "" },
+    { name: "Sample Junction", logo: "/assets/img/Samplejunction.png", link: "https://www.samplejunction.com/" },
   ];
 
   return (
-    <div className="w-full max-w-full mx-auto bg-white py-8 rounded-lg shadow-gray-700 border-2 border-gray-200 overflow-x-hidden">
+    <div className="w-full max-w-full mx-auto bg-white py-8 rounded-lg shadow-gray-700 border-2 border-gray-200 overflow-x-hidden mb-10">
       <h1 className="text-3xl font-extrabold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-900 to-sky-500">
         Global Companies Trust Us
       </h1>

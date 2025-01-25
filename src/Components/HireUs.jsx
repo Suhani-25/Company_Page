@@ -60,9 +60,9 @@ function BouncingButton() {
             </div>
 
             {/* Mobile Image */}
-            <div className="md:hidden relative w-[70%] mx-auto">
+            <div className="md:hidden relative w-full flex- justfy-center items-center">
               <img
-                className=" w-full transform -translate-x-1/2"
+                className=" w-[70%]"
                 src="https://rvs-faq-accordion-card.netlify.app/images/illustration-woman-online-mobile.svg"
                 alt="illustration-woman-online-mobile"
               />
@@ -83,13 +83,13 @@ function BouncingButton() {
                   Shivsys Inc. specializes in IT services, including Staff Augmentation, CRM and ERP software solutions, SaaS development, eCommerce platforms, quality engineering, cloud engineering, and digital marketing services.
                 </p>
               </details>
-{/* Question 2 */}
+              {/* Question 2 */}
            <details className="border-b-[1px] border-b-[#3B65B3] mb-5 cursor-pointer hover:bg-blue-100 hover:scale-105 transform transition-all duration-200">
                 <summary className="text-[#1e1865f4] font-bold relative">
                   What industries does Shivsys Inc. cater to?
                   <span className="absolute right-0 w-2.5 h-2.5 bg-no-repeat bg-center transform rotate-0" style={{ backgroundImage: 'url(https://rvs-faq-accordion-card.netlify.app/images/icon-arrow-down.svg)' }}></span>
                 </summary>
-                <p className="text-black text-xs font-bold line-height-4 pr-6">
+                <p className="text-black text-sm md:text-base font-medium line-height-4 pr-4 mt-2 mb-2">
                   We serve a wide range of industries, including healthcare, eCommerce, fitness, industrial manufacturing, and more, delivering tailored IT solutions to meet specific business needs.
                 </p>
               </details>
@@ -100,7 +100,7 @@ function BouncingButton() {
                   How does Shivsys Inc. ensure project success?
                   <span className="absolute right-0 w-2.5 h-2.5 bg-no-repeat bg-center transform rotate-0" style={{ backgroundImage: 'url(https://rvs-faq-accordion-card.netlify.app/images/icon-arrow-down.svg)' }}></span>
                 </summary>
-                <p className="text-black text-xs font-bold line-height-4 pr-6">
+                <p className="text-black text-sm md:text-base font-medium line-height-4 pr-4 mt-2 mb-2">
                   Shivsys Inc. uses Agile methodologies, skilled IT professionals with extensive experience, and advanced tools to deliver projects on time, with transparency and consistent communication.
                 </p>
               </details>
@@ -111,7 +111,7 @@ function BouncingButton() {
                   Do you offer customized software solutions?
                   <span className="absolute right-0 w-2.5 h-2.5 bg-no-repeat bg-center transform rotate-0" style={{ backgroundImage: 'url(https://rvs-faq-accordion-card.netlify.app/images/icon-arrow-down.svg)' }}></span>
                 </summary>
-                <p className="text-black text-xs font-bold line-height-4 pr-6">
+                <p className="text-black text-sm md:text-base font-medium line-height-4 pr-4 mt-2 mb-2">
                   Yes, we develop custom software and applications tailored to meet the unique requirements of businesses, ensuring scalability and long-term efficiency.
                 </p>
               </details>
@@ -122,7 +122,7 @@ function BouncingButton() {
                   What digital marketing services do you offer?
                   <span className="absolute right-0 w-2.5 h-2.5 bg-no-repeat bg-center transform rotate-0" style={{ backgroundImage: 'url(https://rvs-faq-accordion-card.netlify.app/images/icon-arrow-down.svg)' }}></span>
                 </summary>
-                <p className="text-black text-xs font-bold line-height-4 pr-6">
+                <p className="text-black text-sm md:text-base font-medium line-height-4 pr-4 mt-2 mb-2">
                   Shivsys Inc. provides SEO, PPC campaigns, social media management, and email automation services to help businesses grow their online presence and achieve measurable results.
                 </p>
               </details>
@@ -133,7 +133,7 @@ function BouncingButton() {
                   How can I get started with Shivsys Inc.?
                   <span className="absolute right-0 w-2.5 h-2.5 bg-no-repeat bg-center transform rotate-0" style={{ backgroundImage: 'url(https://rvs-faq-accordion-card.netlify.app/images/icon-arrow-down.svg)' }}></span>
                 </summary>
-                <p className="text-black text-xs font-bold line-height-4 pr-6">
+                <p className="text-black text-sm md:text-base font-medium line-height-4 pr-4 mt-2 mb-2">
                   Contact us via email at info@shivsys.com or visit our website to discuss your requirements. Our team will guide you through the process to kickstart your project.
                 </p>
               </details>
@@ -144,7 +144,7 @@ function BouncingButton() {
                   Why should I choose Shivsys Inc.?
                   <span className="absolute right-0 w-2.5 h-2.5 bg-no-repeat bg-center transform rotate-0" style={{ backgroundImage: 'url(https://rvs-faq-accordion-card.netlify.app/images/icon-arrow-down.svg)' }}></span>
                 </summary>
-                <p className="text-black text-xs font-bold line-height-4 pr-6">
+                <p className="text-black text-sm md:text-base font-medium line-height-4 pr-4 mt-2 mb-2">
                   With experienced professionals, a customer-centric approach, and a proven track record of delivering high-quality IT solutions, Shivsys Inc. is a trusted partner for businesses worldwide.
                 </p>
               </details>

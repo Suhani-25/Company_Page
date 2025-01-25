@@ -5,7 +5,7 @@ const EngagementModels = () => {
     <section className="engagementModels py-16 mt-0">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="mt-4 text-5xl sm:text-4xl text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-teal-700 animate-textColorChange mb-10 font-custom leading-normal">
+          <h2 className="mt-4 text-4xl sm:text-5xl  font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-teal-700 animate-textColorChange mb-10 font-custom leading-normal">
             Our Engagement Models
           </h2>
           <span className="text-xl text-gray-600">Get exactly what your business needs with our flexible engagement models</span>

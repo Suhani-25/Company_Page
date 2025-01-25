@@ -1,19 +1,19 @@
 import React from 'react';
 
-const Careers = () => {
+const career = () => {
   return (
-    <section className="bg-white py-12 px-6 md:px-16 lg:px-24 text-blue-950 text-center">
+    <section className="bg-white py-12 px-6 md:px-16 lg:px-24 text-blue-950 mt-6 text-center">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center justify-center bg-white p-8 rounded-lg shadow-lg">
+        <div className="flex flex-col lg:flex-row items-center justify-center bg-blue-50 p-8 rounded-lg shadow-lg">
           <div className="w-full lg:w-1/2">
-            <h2 className="text-4xl font-extrabold text-blue-900 mb-4 text-center">Career At Shivsys</h2>
+            <h2 className="text-4xl font-extrabold text-blue-900 mb-4 text-center">Careers At Shivsys</h2>
             <p className="text-lg text-gray-700 mb-6">
               We are the foundation of our culture. We invest in your talent as much we invest in our future. We're fostering a culture of innovation and growth that benefits everyone.
             </p>
-            <div className="space-x-4">
+            <div className="flex flex-col sm:flex-row sm:justify-center sm:space-x-4 space-y-4 sm:space-y-0">
               <a 
                 href="https://www.linkedin.com/company/shivsys-incorporation123/posts/?feedView=all" 
-                className="inline-flex items-center bg-orange-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-orange-600 transition duration-300"
+                className="inline-flex items-center justify-center bg-orange-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-orange-600 transition duration-300"
               >
                 JOIN SHIVSYS TEAM
                 <svg
@@ -32,7 +32,7 @@ const Careers = () => {
               </a>
               <a
                 href="/TeamPage.jsx"
-                className="inline-flex items-center bg-blue-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300"
+                className="inline-flex items-center justify-center bg-blue-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300"
               >
                 View leadership
                 <svg
@@ -57,4 +57,4 @@ const Careers = () => {
   );
 };
 
-export default Careers;
+export default career;

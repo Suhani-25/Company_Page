@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Values = () => {
+const values = () => {
   // State to manage the clicked image
   const [expandedImage, setExpandedImage] = useState(null);
 
@@ -121,4 +121,4 @@ const Values = () => {
   );
 };
 
-export default Values;
+export default values;

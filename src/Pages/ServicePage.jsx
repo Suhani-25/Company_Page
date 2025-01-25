@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Models from '../Components/Models.jsx';
+import Models from "../Components/Models.jsx";
 import RelatedServices from "../Components/RelatedServices.jsx";
 
 const ServicePage = () => {
@@ -10,62 +10,81 @@ const ServicePage = () => {
       title: "IT Services",
       description: (
         <>
-          <p>Comprehensive IT solutions, including training, digital marketing, and QA, to empower businesses and enhance competitiveness.</p>
+          <p>
+            Comprehensive IT solutions, including training, digital marketing,
+            and QA, to empower businesses and enhance competitiveness.
+          </p>
         </>
       ),
       benefits: [
         "24/7 support and monitoring for seamless operations.",
         "Expert training in IT, digital marketing, and QA.",
         "Scalable solutions tailored to businesses of all sizes.",
-        "Access to top industry professionals."
+        "Access to top industry professionals.",
       ],
-      icon: "/src/assets/img/ITservice.png"
+      icon: "/assets/img/ITservice.png",
     },
     {
       title: "Staff Augmentation",
       description: (
         <>
-          <p>Specialized talent integration to scale businesses effectively with compliance, skilled recruiters, and cost-effective solutions.</p>
+          <p>
+            Specialized talent integration to scale businesses effectively with
+            compliance, skilled recruiters, and cost-effective solutions.
+          </p>
         </>
       ),
       benefits: [
         "Access to top talent with industry-best practices.",
         "Cost-efficient contingent staffing solutions.",
         "Dedicated support team for seamless execution.",
-        "Enhanced efficiency in resource management."
+        "Enhanced efficiency in resource management.",
       ],
-      icon: "/src/assets/img/Staffagumentation.png"
+      icon: "/assets/img/Staffagumentation.png",
     },
     {
       title: "Direct Hire Solutions",
       description: (
         <>
-          <p>Streamlined hiring process to connect businesses with top talent quickly and efficiently.</p>
+          <p>
+            Streamlined hiring process to connect businesses with top talent
+            quickly and efficiently.
+          </p>
         </>
       ),
       benefits: [
         "Simplified recruitment process from start to finish.",
         "Thorough reference checks to ensure quality hires.",
         "Access to a vast network of skilled candidates.",
-        "Time and cost savings through expert management."
+        "Time and cost savings through expert management.",
       ],
-      icon: "/src/assets/img/hired.png"
+      icon: "/assets/img/hired.png",
     },
     {
       title: "Technology Consulting",
       description: (
         <>
-          <p>Expert IT consulting to align strategies, enhance security, and ensure smooth digital transformation.</p>
+          <p>
+            Expert IT consulting to align strategies, enhance security, and
+            ensure smooth digital transformation.
+          </p>
         </>
       ),
       benefits: [
         "Tailored IT solutions for business challenges.",
         "Guidance on digital transformation and strategy.",
         "Cost-effective resource optimization.",
-        "Business continuity through disaster recovery expertise."
+        "Business continuity through disaster recovery expertise.",
       ],
-      icon: "/src/assets/img/consultation.png"
-    }
+      icon: "/assets/img/consultation.png",
+    },
+  ];
+
+  const hoverColors = [
+    "hover:bg-blue-100",
+    "hover:bg-green-100",
+    "hover:bg-yellow-100",
+    "hover:bg-purple-100",
   ];
 
   useEffect(() => {
@@ -74,20 +93,23 @@ const ServicePage = () => {
 
   return (
     <section className="py-0">
-      
-      < div className="bg-gray-400 ">
-      <h1 className="text-5xl font-extrabold text-blue-900 font-serif mb-8 text-center">
-        Unlock the Future with Our Services
-      </h1>
-      <p className="text-lg text-indigo-950 font-semibold mb-6 text-center">
-        Tailored Solutions to Drive Your Business Forward.<br />
-        From cutting-edge mobile apps to AI-powered analytics, our expertise spans across various domains.
-      </p>
+      <div className="bg-white mt-20 mb-40 px-4">
+        <h1 className="text-5xl sm:text-6xl font-extrabold text-blue-900 font-serif mb-8 text-center">
+          Unlock the Future with Our Services
+        </h1>
+        <p className="text-lg text-indigo-950 font-semibold mb-6 text-center">
+          Tailored Solutions to Drive Your Business Forward.
+          <br />
+          From cutting-edge mobile apps to AI-powered analytics, our expertise
+          spans across various domains.
+        </p>
 
-      <p className="text-lg text-gray-700 mx-10 mb-16 text-center">
-        At Shivsys, we are committed to providing innovative solutions that not only meet your needs but also exceed your expectations. Whether you're looking for a complete digital transformation or specialized development services, our team is here to bring your vision to life.
-      </p>
-      
+        <p className="text-lg text-gray-700 mx-10 mb-16 text-center">
+          At Shivsys, we are committed to providing innovative solutions that
+          not only meet your needs but also exceed your expectations. Whether
+          you're looking for a complete digital transformation or specialized
+          development services, our team is here to bring your vision to life.
+        </p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 mx-2">
@@ -95,7 +117,13 @@ const ServicePage = () => {
           <a
             key={index}
             href={service.link || "#"}
-            className={`relative bg-white rounded-lg p-3 w-3/4 h-auto mx-auto transition-transform transform hover:scale-110 hover:shadow-2xl duration-500 group flex ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} items-center justify-center border-2 border-teal-200 hover:border-teal-400`}
+            className={`relative bg-white rounded-lg p-3 w-3/4 h-auto mx-auto transition-transform transform hover:scale-110 focus:scale-110 active:scale-110 hover:shadow-2xl focus:shadow-2xl active:shadow-2xl duration-500 group flex ${
+              index % 2 === 0
+                ? "lg:flex-row"
+                : "lg:flex-row-reverse"
+            } items-center justify-center border-2 border-teal-200 hover:border-teal-400 focus:border-teal-400 active:border-teal-400 ${
+              hoverColors[index % hoverColors.length]
+            }`}
           >
             <div className="flex-1 text-center lg:text-left mb-2 lg:mb-0 lg:mr-8">
               <h3 className="text-2xl font-bold text-indigo-800 mb-1 group-hover:text-indigo-900 transition-all duration-500 transform group-hover:scale-110 text-center">
@@ -137,14 +165,35 @@ const ServicePage = () => {
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-5">
-            {["Analyze", "Develop", "Test", "Deploy"].map((step, idx) => (
+            {[
+              {
+                title: "Analyze",
+                description:
+                  "We understand your unique challenges, goals, and business processes to craft customized solutions tailored to your needs.",
+              },
+              {
+                title: "Develop",
+                description:
+                  "Our expert team leverages the latest technology to design and build scalable, innovative solutions with precision and efficiency.",
+              },
+              {
+                title: "Test",
+                description:
+                  "Through rigorous testing and quality assurance, we ensure that the solutions meet the highest standards of reliability and performance.",
+              },
+              {
+                title: "Deploy",
+                description:
+                  "We implement the solution seamlessly, providing support and training to ensure your business achieves maximum value and efficiency.",
+              },
+            ].map((step, idx) => (
               <div
                 key={idx}
-                className="group flex flex-col items-center bg-white p-6 rounded-lg shadow-lg hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-105"
+                className="group flex flex-col items-center bg-white p-6 rounded-lg shadow-lg hover:bg-blue-500 focus:bg-blue-500 active:bg-blue-500 hover:text-white focus:text-white active:text-white transition-all duration-300 ease-in-out transform hover:scale-105 focus:scale-105 active:scale-105"
               >
-                <h3 className="text-xl font-semibold mb-4">{step}</h3>
+                <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
                 <hr className="w-12 border-t-2 border-blue-500 mb-4 group-hover:border-white transition-all duration-300 ease-in-out" />
-                <p className="mb-4">{`Description for ${step}`}</p>
+                <p className="mb-4 text-center">{step.description}</p>
                 <h4 className="text-4xl font-bold">{idx + 1}</h4>
               </div>
             ))}
@@ -152,8 +201,12 @@ const ServicePage = () => {
         </div>
       </section>
 
-      {/* Additional Sections (Optional) */}
-      <section className={`bg-white py-12 px-6 md:px-16 lg:px-24 text-blue-900 ${isVisible ? "animate-fallDown" : "opacity-0"}`}>
+      {/* Additional Sections */}
+      <section
+        className={`bg-white py-12 px-6 md:px-16 lg:px-24 text-blue-900 ${
+          isVisible ? "animate-fallDown" : "opacity-0"
+        }`}
+      >
         <Models />
         <RelatedServices />
       </section>

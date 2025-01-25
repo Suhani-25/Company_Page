@@ -27,7 +27,7 @@ const ServicesPage = () => {
       clipPath: 'circle(calc(6.25rem + 7.5vw) at 100% 0%)',
     },
     {
-      title: 'Consulting',
+      title: ' IT Consulting',
       description:
         'Comprehensive Consulting strategies to expand your business from evolving Skills.',
       backgroundImage:
@@ -58,7 +58,7 @@ const ServicesPage = () => {
       <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-700 animate-textColorChange font-custom text-center  sm:text-4xl md:text-5xl xl:text-6xl max-w-3xl mx-auto mb-12 leading-snug">
         Services Built Specifically for your Business
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-16 max-w-5xl mx-auto">
         {cardData.map((card, index) => (
           <div
             key={index}
@@ -75,7 +75,7 @@ const ServicesPage = () => {
               <h2 className="capitalize text-blue-800 mb-3 sm:mb-4 text-xl sm:text-2xl xl:text-3xl">
                 {card.title}
               </h2>
-              <p className="text-blue-950 text-sm sm:text-base group-hover:text-white">
+              <p className="text-blue-950 text-sm sm:text-base group-hover:text-blue-900">
                 {card.description}
               </p>
             </div>

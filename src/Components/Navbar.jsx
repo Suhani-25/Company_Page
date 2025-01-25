@@ -1,6 +1,5 @@
 import { useState } from "react";
 import React from "react";
-import ShivsysLogo from "/public/img/ShivsysLogo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +12,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20 w-full">
           {/* Left Section: Logo and Brand Name */}
           <div className="flex items-center space-x-4 mr-auto">
-            <img src={ShivsysLogo} alt="Logo" className="h-12 ml-0 max-w-full" />
+            <img src="/assets/img/ShivsysLogo.png" alt="Logo" className="h-12 ml-0 max-w-full" />
           </div>
 
           {/* Center Section: Navigation Links */}
@@ -34,13 +33,13 @@ const Navbar = () => {
               href="/ServicePage"
               className="text-lg font-semibold hover:text-blue-500 transition duration-300"
             >
-              Service
+              Services
             </a>
             <a
               href="/CareerPage"
               className="text-lg font-semibold hover:text-blue-500 transition duration-300"
             >
-              Careers
+              Career
             </a>
             <a
               href="/TeamPage"
@@ -59,7 +58,7 @@ const Navbar = () => {
           {/* Right Section: Get Started Button */}
           <a
             href="https://www.linkedin.com/company/shivsyssoftwaresprivatelimited"
-            className="hidden lg:inline-block text-lg rounded-full bg-blue-700 text-white font-semibold py-2 px-6 hover:bg-blue-800 transition duration-300 ml-auto"
+            className="hidden lg:inline-block text-lg rounded-full bg-blue-900 text-white font-semibold py-2 px-6 hover:bg-blue-800 transition duration-300 ml-auto"
           >
             Get Started
           </a>
@@ -120,10 +119,10 @@ const Navbar = () => {
             About
           </a>
           <a href="/ServicePage" className="block text-lg font-semibold hover:text-blue-500">
-            Service
+            Services
           </a>
           <a href="/CareerPage" className="block text-lg font-semibold hover:text-blue-500">
-            Careers
+            Career
           </a>
           <a href="/TeamPage" className="block text-lg font-semibold hover:text-blue-500">
             Team
@@ -133,7 +132,7 @@ const Navbar = () => {
           </a>
           <a
             href="https://www.linkedin.com/company/shivsyssoftwaresprivatelimited"
-            className="block text-lg font-semibold bg-blue-700 text-white rounded-full py-2 px-4 hover:bg-blue-800"
+            className="block text-lg font-semibold bg-blue-900 text-white rounded-full py-2 px-4 hover:bg-blue-800"
           >
             Get Started
           </a>
@@ -141,9 +140,9 @@ const Navbar = () => {
       )}
 
       {/* WhatsApp Icon */}
-      <div className="fixed bottom-24 right-10 z-10 text-right">
+      <div className="fixed bottom-24 right-6 z-10 text-right">
         <a href="https://wa.me/12672183807" target="_blank" rel="noopener noreferrer">
-          <img src="src/assets/img/img4.gif" alt="WhatsApp" className="w-16 h-16 md:w-24 md:h-24 max-w-full" />
+          <img src="/assets/img/img4.gif" alt="WhatsApp" className="w-16 h-16 md:w-24 md:h-24 max-w-full" />
         </a>
       </div>
     </nav>

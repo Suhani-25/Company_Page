@@ -11,19 +11,21 @@ const JobOpenSection = () => {
 
   return (
     <section className="openPosition secondClass py-16 mt-8 mb-8">
-      <div className="container mx-auto">
-        <div className="row">
-          <div className="col-12">
-            <div className="titleSection text-center mb-8">
-              <h4 className="text-3xl font-semibold text-gray-800">Grab New Opportunities</h4>
-              <p className="text-lg text-gray-600">Explore career opportunities and discover the perfect fit for your talents</p>
-            </div>
-          </div>
+      <div className="container mx-auto flex flex-col items-center">
+        {/* Title Section */}
+        <div className="titleSection text-center mb-8">
+          <h4 className="text-3xl font-semibold text-gray-800">
+            Grab New Opportunities
+          </h4>
+          <p className="text-lg text-gray-600">
+            Explore career opportunities and discover the perfect fit for your talents
+          </p>
         </div>
 
-        <div className="openPositionRow flex flex-col lg:flex-row items-start justify-between">
-          <div className="jobPostionFilter flex flex-wrap space-x-4 mb-8 lg:mb-0">
-            <div className="dropdown w-full lg:w-1/3 mb-4 lg:mb-0">
+        {/* Job Filters Section */}
+        <div className="flex justify-center items-center w-full">
+          <div className="openPositionRow flex flex-col lg:flex-row items-center justify-center mx-auto w-full max-w-4xl px-4 space-y-4 lg:space-y-0 lg:space-x-4">
+            <div className="dropdown w-full lg:w-1/3">
               <input
                 className="form-control job_title border-2 border-gray-300 rounded-lg py-2 px-4 w-full"
                 placeholder="Job Title"
@@ -32,7 +34,7 @@ const JobOpenSection = () => {
                 type="text"
               />
             </div>
-            <div className="dropdown selectDropBox w-full lg:w-1/3 mb-4 lg:mb-0">
+            <div className="dropdown selectDropBox w-full lg:w-1/3">
               <select
                 className="location_name border-2 border-gray-300 rounded-lg py-2 px-4 w-full"
                 id="locationDropdown"
@@ -51,7 +53,6 @@ const JobOpenSection = () => {
                 <option value="Mumbai, India">Mumbai, India</option>
                 <option value="Noida, India">Noida, India</option>
                 <option value="Gurgaon, India">Gurgaon, India</option>
-                {/* Add more options as needed */}
               </select>
             </div>
             <button
@@ -60,21 +61,19 @@ const JobOpenSection = () => {
             >
               Search
               <svg
-                viewBox="0 0 7.4 22"
-                className="button_arrow__379Os desktopArrow ml-2 w-4 h-4 transform rotate-45"
+                width="20"
+                height="12"
+                viewBox="0 0 20 12"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className="ml-2"
               >
-                <polyline points="3.7,0.5 3.7,21.5 6.9,18.4" />
-                <polyline points="3.7,0.5 3.7,21.5 0.5,18.4" />
+                <path
+                  d="M19.5303 6.53033C19.8232 6.23744 19.8232 5.76256 19.5303 5.46967L14.7574 0.696699C14.4645 0.403806 13.9896 0.403806 13.6967 0.696699C13.4038 0.989593 13.4038 1.46447 13.6967 1.75736L17.9393 6L13.6967 10.2426C13.4038 10.5355 13.4038 11.0104 13.6967 11.3033C13.9896 11.5962 14.4645 11.5962 14.7574 11.3033L19.5303 6.53033ZM0.5 6.75L19 6.75V5.25L0.5 5.25L0.5 6.75Z"
+                  fill="#FFB6C1"
+                />
               </svg>
             </button>
-          </div>
-
-          <div className="jobOpenPosition w-full">
-            <div id="all_jobs_div">
-              {/* Jobs listing will be rendered here */}
-              {/* Map through job postings data to display individual job cards */}
-            </div>
           </div>
         </div>
       </div>

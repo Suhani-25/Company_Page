@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Footer = () => {
   return (
     <div className="flex flex-col w-full bg-gradient-to-b from-white via-blue-200 to-blue-400 animate-gradient">
@@ -13,10 +14,11 @@ const Footer = () => {
         <div className="flex flex-wrap justify-around w-full max-w-7xl px-6">
           {/* Address Section */}
           <div className="spectacledcoder-footer-section flex flex-col w-full md:w-1/4 items-center md:items-start text-center md:text-left space-y-4">
-            <h2 className="font-bold text-lg">Addresses</h2>
-            <p>123 Shivsys Lane, Tech City</p>
-            <p>Innovation State, 56789</p>
-            <p>Contact Us for More Info</p>
+            <h2 className="font-bold text-lg">Address</h2>
+            <p className="font-semibold">Sheridan,Wyoming,82801</p>
+            <p className="font-semibold">Apex Tower,Greater Noida,Uttar Pradesh</p>
+            <p className="font-semibold">143, Mastermind, Royal Palms, Goregaon East, Mumbai</p>
+            <p className="font-semibold">Delapeer,Bareilly,Uttar Pradesh</p>
           </div>
 
           {/* Mail-Us Section */}
@@ -86,7 +88,7 @@ const Footer = () => {
               <img
                 width="30"
                 height="30"
-                src="/src/assets/img/linkedin2.png"
+                src="/assets/img/linkedin2.png"
                 alt="LinkedIn"
               />
             </a>
